@@ -60,7 +60,7 @@ def scenary1():
         sleep(0.5)
         
     print("Total consumption: ", total_consumption)
-    return "24 hours - 25 grades", total_consumption
+    return "24 hours - 25 degrees", total_consumption
 
 
 
@@ -79,7 +79,7 @@ def scenary2():
         sleep(0.5)
         
     print("Total consumption: ", total_consumption)
-    return "24 hours - 26 grades", total_consumption
+    return "24 hours - 26 degrees", total_consumption
 
 
 def scenary3():
@@ -97,7 +97,7 @@ def scenary3():
         sleep(0.5)
         
     print("Total consumption: ", total_consumption)
-    return "24 hours - 27 grades", total_consumption
+    return "24 hours - 27 degrees", total_consumption
 
 
 def scenary4():
@@ -115,7 +115,7 @@ def scenary4():
         sleep(0.5)
         
     print("Total consumption: ", total_consumption)
-    return "24 hours - 28 grades", total_consumption
+    return "24 hours - 28 degrees", total_consumption
 
 
 def scenary5():
@@ -133,7 +133,7 @@ def scenary5():
         sleep(0.5)
         
     print("Total consumption: ", total_consumption)
-    return "8 hours - 25 grades", total_consumption
+    return "8 hours - 25 degrees", total_consumption
 
 def scenary6():
     """
@@ -150,7 +150,7 @@ def scenary6():
         sleep(0.5)
         
     print("Total consumption: ", total_consumption)
-    return "8 hours - 26 grades", total_consumption
+    return "8 hours - 26 degrees", total_consumption
 
 def scenary7():
     """
@@ -167,7 +167,7 @@ def scenary7():
         sleep(0.5)
         
     print("Total consumption: ", total_consumption)
-    return "8 hours - 27 grades", total_consumption
+    return "8 hours - 27 degrees", total_consumption
 
 def scenary8():
     """
@@ -184,7 +184,7 @@ def scenary8():
         sleep(0.5)
         
     print("Total consumption: ", total_consumption)
-    return "8 hours - 28 grades", total_consumption
+    return "8 hours - 28 degrees", total_consumption
   
 
 if __name__ == "__main__":
