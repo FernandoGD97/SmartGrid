@@ -1,6 +1,6 @@
 
 class solarCellAgent():
-    def __init__(self, num_cells = 162, power_supply = 413, state = 100.0):
+    def __init__(self, num_cells = 162, power_supply = 400, capacity = 36000):
         """
         Initialise a solar cell agent
 
@@ -9,32 +9,35 @@ class solarCellAgent():
         :param power_supply
         :return: returns nothing
         """
-        self.state = state
+        self.state = capacity
         self.power_supply = power_supply * num_cells
+        self.capacity = capacity
 
     def charge(self):
         """
-            Charge the battery, 10% per hour.
+            Charge the battery, energy produced by solar cells is stored in a battery.
         """
-        self.state = min(100.0, self.state + 10.0)
+        self.state = min(self.capacity, self.state + self.power_supply)
 
-    def discharge(self):
+    def discharge(self, supply):
         """
-            Discharge the battery, 10% per battery. If battery has not enough power to supply, it takes the % corresponding.
-            :return % of the power supply in an hour.
-
+            Discharge the battery, consumes the energy stored in the battery
+            @param supply: Amount of supply which is consumed
+            @return supply
         """
-        v = min(0.0, self.state - 10.0)
-        p = 1.00
-        if self.state - v != 10.0:
-            p = 10.0 - (self.state - v)
-        return p * self.power_supply
+        if self.state >= supply:
+            self.state -= supply
+            return supply
+        else:
+            v = self.state
+            self.state = 0.0
+            return v
 
     def printStatus(self):
         """
         Return the actual solar cell status
         """
-        return "Solar cell is {} battery supplying {}".format(self.state, self.power_supply)
+        return "Solar cell is {} battery supplying {}".format(round((self.state/self.capacity)*100, 2), self.power_supply)
 
 
             
