@@ -47,7 +47,7 @@ def heatPerception(temp):
             air_temp = 22
     return air_temp
 
-def scenary(degree, num_hours):
+def scenario(degree, num_hours):
     """
     Simulates a scenario where the air conditioning is turned on NUM_HOURS a day at  DEGREES degrees.
     """
@@ -64,7 +64,7 @@ def scenary(degree, num_hours):
     return "{} hours - {} degrees".format(num_hours,degree), total_consumption
 
 
-def scenary2(degree, num_hours):
+def scenario2(degree, num_hours):
     """
     Simulates a second scenario where the air conditioning is turned on NUM_HOURS a day at  DEGREES degrees and we consumes the solar cell energy as soon as we can.
     """
@@ -95,12 +95,12 @@ def main():
     hours = [9,24]    
     for hour in hours:
         for temp in degrees:
-            k, v = scenary(temp,hour)
+            k, v = scenario(temp,hour)
             dic[k] = v
     for hour in hours:
         for temp in degrees:
             s.state = 36000
-            k, v = scenary2(temp,hour)
+            k, v = scenario2(temp,hour)
             dic[k] = v
     print (json.dumps(dic, indent=2, default=str))
 
